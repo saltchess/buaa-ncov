@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./test.ps1"
+    "test": "powershell .\\test.ps1"
   },
   "keywords": [],
   "author": "",

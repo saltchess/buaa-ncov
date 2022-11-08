@@ -1,3 +1,5 @@
 node_modules
 *.py
 *.ps1
+*.xml
+*.txt
