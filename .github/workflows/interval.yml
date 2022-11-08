@@ -1,0 +1,19 @@
+name: buaa-ncov
+
+on:
+  schedule:
+    - cron: '* * 8 * *'
+  workflow_dispatch:
+
+jobs:
+  daily-clock:
+    name: Daily Clock at 5 pm
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v3
+      with:
+        node-version: "16.15"
+        cache: "pnpm"
+    - run: pnpm i
+    - run: node daily_clock.js -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
