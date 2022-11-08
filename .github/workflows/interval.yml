@@ -11,9 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 7.14.2
     - uses: actions/setup-node@v3
       with:
-        node-version: "16.15"
+        node-version: 16.15
         cache: "pnpm"
     - run: pnpm i
     - run: node daily_clock.js -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}

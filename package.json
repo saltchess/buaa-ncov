@@ -1,10 +1,10 @@
 {
-  "name": "kaka",
+  "name": "buaa-ncov",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node daily_clock.js -u 19374307 -p 58080438buaabhu"
+    "test": "./test.ps1"
   },
   "keywords": [],
   "author": "",
