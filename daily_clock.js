@@ -6,7 +6,7 @@ const axios = require('axios').create({
 })
 axios.interceptors.response.use(res => {
 	axios.defaults.headers.Cookie ??= res.headers["set-cookie"]
-	if (res.status != 200) return Promise.reject(res.statusText)
+	if (res.status != 200) throw res.statusText
 	return res.data
 })
 
@@ -35,10 +35,11 @@ function logout() {
 		let { d: tmpl } = await redirect()
 		console.log("Redirect Success!");
 
-		await clock(Object.assign(
-			tmpl.oldInfo,
-			{ realname: tmpl.uinfo.realname, number: tmpl.uinfo.role.number },
-		))
+		await clock({
+			...tmpl.oldInfo,
+			realname: tmpl.uinfo.realname,
+			number: tmpl.uinfo.role.number
+		})
 		console.log("Clock Success!");
 
 		await logout()
