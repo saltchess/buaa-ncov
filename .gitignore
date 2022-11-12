@@ -1,5 +1,7 @@
-node_modules
-*.py
-*.ps1
-*.xml
-*.txt
+/node_modules
+/*.py
+/*.ps1
+/*.xml
+/*.txt
+/*.url
+/*.png
