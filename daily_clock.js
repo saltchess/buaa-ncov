@@ -4,7 +4,7 @@ const axios = require('axios').create({
 	baseURL: 'https://app.buaa.edu.cn/',
 	headers: { "Content-Type": "application/x-www-form-urlencoded" },
 })
-axios.interceptors.request.use(res => {
+axios.interceptors.response.use(res => {
 	axios.defaults.headers.Cookie ??= res.headers["set-cookie"]
 	if (res.status != 200) return Promise.reject(res.statusText)
 	return res.data
