@@ -35,6 +35,9 @@ function logout() {
 		let { d: tmpl } = await redirect()
 		console.log("Redirect Success!");
 
+		console.log("Template Data:");
+		console.log(tmpl);
+
 		await clock({
 			...tmpl.oldInfo,
 			realname: tmpl.uinfo.realname,
